@@ -1,0 +1,114 @@
+
+/* Custom styles that extend Tailwind */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg: #195898;
+    --text: #0f172a;
+    --muted: #6b7280;
+    --primary: #6366f1;
+    --secondary: #8b5cf6;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 420ms ease, color 420ms ease;
+}
+
+/* Dark theme variable overrides on the root html element when .dark is present */
+html.dark {
+    --bg: #0b1220; /* dark background */
+    --text: #0a0c0d;
+    --muted: #9ca3af;
+    --primary: #6366f1;
+    --secondary: #8b5cf6;
+}
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom button animations */
+.btn-hover {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.btn-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+/* Accessibility focus styles */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+}
+
+/* Roadmap generator styles */
+#roadmap-result {
+    transition: all 0.3s ease;
+}
+
+.prose ul {
+    @apply list-disc pl-5;
+}
+
+.prose li {
+    @apply mb-1;
+}
+
+.prose h4 {
+    @apply text-lg font-bold mb-3;
+}
+/* Dark mode toggle styles (if implemented later) */
+.dark {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* Make links, buttons and other elements transition smoothly when theme changes */
+a, button, input, select, textarea, .nav-container, header, footer, .container {
+    transition: color 320ms ease, background-color 320ms ease, border-color 320ms ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6366f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4f46e5;
+}
+
+/* ===== Override: Force all text black =====
+   The user requested all text appear black. This rule uses a CSS variable
+   and a defensive !important override to take precedence over utility
+   classes (e.g. Tailwind text-*). If you want a less aggressive approach
+   later, we can remove the !important and target specific elements. */
+:root {
+    --text: #000000;
+}
+
+html, body {
+    color: var(--text) !important;
+}
+
+/* Force any descendant text color to black (overrides utility classes) */
+body, body * {
+    color: var(--text) !important;
+}

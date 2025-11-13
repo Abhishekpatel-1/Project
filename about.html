@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - EduFusion Nexus</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased">
+    <custom-navbar>
+      <theme-toggle slot="right"></theme-toggle>
+    </custom-navbar>
+    
+    <main class="py-20">
+        <section class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h1 class="text-4xl font-bold mb-6">About EduFusion Nexus</h1>
+                <p class="text-xl text-gray-600 dark:text-gray-300">Revolutionizing education through AI-powered learning</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">We believe education should be accessible, personalized, and effective for everyone, regardless of location or background.</p>
+                    <p class="text-gray-600 dark:text-gray-300">Our platform combines cutting-edge AI with proven pedagogical methods to create learning experiences that adapt to each student's needs.</p>
+                </div>
+                <div class="bg-gray-100 dark:bg-gray-800 rounded-xl p-8">
+                    <img src="http://static.photos/education/640x360/1" alt="Learning illustration" class="rounded-lg w-full">
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div class="order-last md:order-first">
+                    <img src="http://static.photos/technology/640x360/2" alt="Technology illustration" class="rounded-lg w-full">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Our Technology</h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">Using machine learning algorithms, we analyze learning patterns to optimize content delivery and retention.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-primary mr-2 mt-1"></i>
+                            <span>Adaptive learning paths</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-primary mr-2 mt-1"></i>
+                            <span>Real-time progress tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-primary mr-2 mt-1"></i>
+                            <span>Predictive analytics</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+    <script src="components/navbar.js"></script>
+    <script src="components/theme-toggle.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
